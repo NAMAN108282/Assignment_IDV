@@ -48,7 +48,7 @@ try:
         makes = [make.text for make in make_dropdown.find_elements_by_tag_name('option')]
         makes = makes[1:]
 
-        # select model list
+        # find model list
         for make in makes:
             make_dropdown.find_element_by_xpath('.//option[text()="%s"]' % make).click()
             time.sleep(0.1)
@@ -56,7 +56,7 @@ try:
             models = [model.text for model in model_dropdown.find_elements_by_tag_name('option')]
             models  = models [1:]
 
-            # select variants list
+            # find variants list
             for model in models:
                 model_dropdown.find_element_by_xpath('.//option[text()="%s"]' % model).click()
                 time.sleep(0.1)
@@ -71,6 +71,8 @@ try:
                     submit_button = driver.find_element_by_id("showPrice").click()
                     time.sleep(0.5)
                     price = driver.find_element_by_xpath('//*[@id ="price"]').text
+                    
+                    # write each data row 
                     with open('IDV.csv', 'a', newline='') as file:
                         writer = csv.writer(file)
                         each_row = [vehicle_type, state, month, year, make, model, variant, price]
