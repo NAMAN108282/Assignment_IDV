@@ -11,7 +11,7 @@ driver=webdriver.Chrome(executable_path=chromedriver)
 # csv file
 with open('IDV.csv', 'w', newline='') as file:
     writer = csv.writer(file)
-    headers = ['VEHICLE TYPE','STATE', 'YEAR', 'MONTH','MAKE', 'MODEL', 'VARIANT', 'IDV_VALUE']
+    headers = ['VEHICLE TYPE','STATE','MONTH', 'YEAR','MAKE', 'MODEL', 'VARIANT', 'IDV_VALUE']
     writer.writerow(headers)
 
 vehicle_type = 'Two Wheeler'
