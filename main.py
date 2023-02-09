@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 import csv
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 
 from selenium.common.exceptions import TimeoutException
 chromedriver = "chromedriver.exe"
